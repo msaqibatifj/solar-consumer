@@ -101,7 +101,7 @@ The package provides three main functionalities:
 
 - `DB_URL=postgresql://postgres:postgres@localhost:5432/neso_solar` : Database Configuration
 - `COUNTRY="gb"` : Country code for fetching data. Currently, other options are ["be", "ind_rajasthan", "nl"] 
-- `SAVE_METHOD`: Ways to store the data. Options are ["db", "csv", "site-db"].  
+- `SAVE_METHOD`: Ways to store the data. Options are ["csv", "site-db", "data-platform"]. 'db' (legacy) has been removed.  
   `site-db` is supported for NL, DE, and India (RUVNL).
 - `CSV_DIR=None` : Directory to save CSV files if `SAVE_METHOD="csv"`.
 - `UK_PVLIVE_REGIME=in-day`: For UK PVLive, the regime. Can be "in-day" or "day-after"

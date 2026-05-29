@@ -381,25 +381,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl", hash = "sha256:1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505", size = 4963, upload-time = "2025-04-22T14:54:22.983Z" },
 ]
 
-[[package]]
-name = "nowcasting-datamodel"
-version = "1.5.56"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "alembic" },
-    { name = "click" },
-    { name = "freezegun" },
-    { name = "numpy" },
-    { name = "pandas" },
-    { name = "psycopg2-binary" },
-    { name = "pydantic" },
-    { name = "sqlalchemy" },
-    { name = "structlog" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/3b/ff/d1aacc95619d295504073607bfd800a0141f8147d074b6cf19170ea31ee6/nowcasting_datamodel-1.5.56.tar.gz", hash = "sha256:f121a56f5b52a4c34cb773e9cd7273fc7e2ba4f4df8910e22d092f4c66d031f3", size = 216292, upload-time = "2024-12-09T16:44:31.194Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/7b/84/ac2c72b02f1b13fb726b7c1f68c0ed9b9c24e9a760f4048eb66f9efa1c68/nowcasting_datamodel-1.5.56-py3-none-any.whl", hash = "sha256:362550a094219172422b94a0c69fa07811d7f86aca58e5087aa27a3323e80586", size = 45843, upload-time = "2024-12-09T16:44:29.877Z" },
-]
+
 
 [[package]]
 name = "numpy"
@@ -739,7 +721,7 @@ dependencies = [
     { name = "entsoe-py" },
     { name = "grpclib" },
     { name = "loguru" },
-    { name = "nowcasting-datamodel" },
+    # nowcasting-datamodel removed (legacy)
     { name = "pandas" },
     { name = "pvlive-api" },
     { name = "pvsite-datamodel" },
@@ -766,7 +748,7 @@ requires-dist = [
     { name = "entsoe-py", specifier = ">=0.8.0" },
     { name = "grpclib", specifier = "==0.4.8" },
     { name = "loguru", specifier = "==0.7.3" },
-    { name = "nowcasting-datamodel", specifier = "==1.5.56" },
+    # nowcasting-datamodel removed from requires-dist (legacy)
     { name = "pandas" },
     { name = "pvlive-api", specifier = ">=1.5.1" },
     { name = "pvsite-datamodel", specifier = "==1.2.0" },

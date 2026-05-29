@@ -14,7 +14,6 @@ from loguru import logger
 from solar_consumer.fetch_data import fetch_data
 # legacy nowcasting_datamodel-based formatting removed
 from solar_consumer.save.save_csv import save_forecasts_to_csv
-from solar_consumer.save.save_database import save_forecasts_to_db
 from solar_consumer.save.save_site_database import (
     save_generation_to_site_db,
     save_forecasts_to_site_db,
@@ -152,14 +151,14 @@ if __name__ == "__main__":
     # Step 1: Fetch the database URL from the environment variable
     db_url = os.getenv("DB_URL")  # Change from "DATABASE_URL" to "DB_URL"
     country = os.getenv("COUNTRY", "gb")
-    save_method = os.getenv("SAVE_METHOD", "db").lower()  # Default to "db"
+    save_method = os.getenv("SAVE_METHOD", "site-db").lower()  # Default to "site-db"
     csv_dir = os.getenv("CSV_DIR")
     historic_or_forecast = os.getenv("HISTORIC_OR_FORECAST", "generation").lower()
 
     if save_method == "csv" and not csv_dir:
         logger.error("CSV_DIR environment variable is required for CSV saving. Exiting.")
         exit(1)
-    if (save_method in ["db", "site-db"]) and (db_url is None):
+    if (save_method in ["site-db"]) and (db_url is None):
         logger.error("DB_URL environment variable is not set. Exiting.")
         exit(1)
 
